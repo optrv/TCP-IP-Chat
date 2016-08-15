@@ -14,12 +14,7 @@ def conn(urname = 'Anonymous'):
     print('Welcome to Chat!')
     print('*Waiting for connection...*')
     ssocket = socket.socket()
-    # For debug
-    try:
-        ssocket.bind(('', 8080))
-    except OSError:
-        ssocket.close()
-        ssocket.bind(('', 9090))
+    ssocket.bind(('', 8080))
     ssocket.listen(1)
     connect, address = ssocket.accept()
     # Receive its name
