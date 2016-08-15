@@ -14,11 +14,7 @@ def conn(urname = 'Anonymous'):
     print('Welcome to Chat!')
     ssocket = socket.socket()
     # For debug
-    try:
-        ssocket.connect(('', 8080))
-    except OSError:
-        ssocket.close()
-        ssocket.connect(('', 9090))
+    ssocket.connect(('', 8080))
     # Send your name
     ssocket.send(urname.encode('utf-8'))
     # Receive its name
