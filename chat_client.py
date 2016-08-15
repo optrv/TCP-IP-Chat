@@ -13,7 +13,6 @@ def conn(urname = 'Anonymous'):
     print('Hello, ' + urname.upper() + '!')
     print('Welcome to Chat!')
     ssocket = socket.socket()
-    # For debug
     ssocket.connect(('', 8080))
     # Send your name
     ssocket.send(urname.encode('utf-8'))
