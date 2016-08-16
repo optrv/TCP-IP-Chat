@@ -25,7 +25,7 @@ def conn(urname = 'Anonymous'):
         msg = input("YOU: ")
         ssocket.send(msg.encode('utf-8'))
         print("*Waiting for %s...*" % itsname.upper())
-        data = ssocket.recv(16000)
+        data = ssocket.recv(1024)
         data = data.decode("utf-8")
         print(itsname.upper() + ": " + data)
         if not data:
